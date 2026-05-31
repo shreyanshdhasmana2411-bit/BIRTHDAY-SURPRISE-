@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Devi 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffe5ec,#fff0f5);
+overflow-x:hidden;
+text-align:center;
+min-height:100vh;
+}
+
+#loginPage{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.title{
+font-family:'Pacifico',cursive;
+font-size:3rem;
+color:#ff4f8b;
+margin-bottom:15px;
+}
+
+.subtitle{
+font-size:1.1rem;
+margin-bottom:20px;
+color:#666;
+}
+
+input{
+padding:12px;
+width:260px;
+border:none;
+border-radius:25px;
+outline:none;
+font-size:16px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff5d97;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#error{
+margin-top:10px;
+color:red;
+}
+
+#mainPage{
+display:none;
+padding:20px;
+}
+
+.message-card{
+background:white;
+max-width:700px;
+margin:30px auto;
+padding:30px;
+border-radius:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.from-dev{
+font-family:'Pacifico',cursive;
+font-size:3rem;
+color:#ff4f8b;
+margin:25px 0;
+}
+
+.note{
+line-height:1.9;
+font-size:1.05rem;
+color:#444;
+}
+
+.teddy{
+font-size:65px;
+margin:10px;
+}
+
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.hearts span{
+position:absolute;
+font-size:24px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@media(max-width:768px){
+
+.title{
+font-size:2.2rem;
+}
+
+.from-dev{
+font-size:2.2rem;
+}
+
+.note{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="loginPage">
+
+<div class="teddy">🧸💕🧸</div>
+
+<h1 class="title">Happy Birthday Devi 🎂</h1>
+
+<p class="subtitle">Open For Surprise 🎁</p>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Secret Password">
+
+<button onclick="checkPassword()">
+Unlock 💖
+</button>
+
+<p id="error"></p>
+
+<p style="margin-top:15px;color:#ff4f8b;">
+Hint: A Special Date ✨
+</p>
+
+</div>
+
+<div id="mainPage">
+
+<div class="hearts" id="hearts"></div>
+
+<h1 class="title">Happy Birthday Devi 💕</h1>
+
+<div class="teddy">
+🧸🎂💖🧸
+</div>
+
+<div class="message-card">
+
+<div class="from-dev">
+From Dev 💌
+</div>
+
+<div class="note">
+
+<p>
+Happy Birthday Devi 💖
+<br><br>
+
+Today is all about celebrating someone truly special. 🌸
+
+May your day be filled with happiness, laughter,
+beautiful surprises, delicious cake, and countless smiles. ✨
+
+<br><br>
+
+You deserve all the good things life has to offer,
+and I hope this year brings you endless joy,
+success, and wonderful memories.
+
+<br><br>
+
+Keep smiling, keep shining,
+and keep being the amazing person you are. 🧸💕
+
+<br><br>
+
+Whenever you feel sad,
+remember that there are people who genuinely care about you
+and want to see you happy.
+
+<br><br>
+
+May all your dreams come true,
+and may every day bring you a new reason to smile. 🌷
+
+<br><br>
+
+Thank you for being such a wonderful person.
+
+<br><br>
+
+Happy Birthday Princess 🎂✨💖
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+let pass =
+document.getElementById("password").value;
+
+if(pass==="0607"){
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("mainPage").style.display="block";
+
+}else{
+
+document.getElementById("error").innerHTML =
+"Oopsie! Wrong Password 🧸💕";
+
+}
+
+}
+
+const hearts =
+document.getElementById("hearts");
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("span");
+
+heart.innerHTML =
+Math.random()>0.5 ? "💖" : "💕";
+
+heart.style.left =
+Math.random()*100 + "%";
+
+heart.style.animationDelay =
+Math.random()*8 + "s";
+
+heart.style.fontSize =
+(20 + Math.random()*20) + "px";
+
+hearts.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
